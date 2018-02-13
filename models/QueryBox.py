@@ -48,6 +48,71 @@ class QueryBox:
 		except Error as e:
 			print(e)
 			return 0
+	
+	def filter_by_user(self, user):
+		res = QueryBox()
+		res.reset()
+		for i in self.box:
+			if i.user == user:
+				res.append(i)
+		return res
+
+	def filter_by_date_range(self, start_date, end_date):
+		res = QueryBox()
+		res.reset()
+		for i in self.box:
+			if i.date >= start_date and i.date <= end_date:
+				res.append(i)
+		return res
+
+	def filter_retweet_count_less_than_eq(self, cntr):
+		res = QueryBox()
+		res.reset()
+		for i in self.box:
+			if i.retweets <= cntr:
+				res.append(i)
+		return res
+
+	def filter_retweet_count_greater_than(self, cntr):
+		res = QueryBox()
+		res.reset()
+		for i in self.box:
+			if i.retweets > cntr:
+				res.append(i)
+		return res
+
+	def filter_retweet_count_equal(self, cntr):
+		res = QueryBox()
+		res.reset()
+		for i in self.box:
+			if i.retweets == cntr:
+				res.append(i)
+		return res		
+
+	def filter_like_count_less_than_eq(self, cntr):
+		res = QueryBox()
+		res.reset()
+		for i in self.box:
+			if i.likes <= cntr:
+				res.append(i)
+		return res
+
+	def filter_like_count_greater_than(self, cntr):
+		res = QueryBox()
+		res.reset()
+		for i in self.box:
+			if i.likes > cntr:
+				res.append(i)
+		return res
+
+	def filter_like_count_equal(self, cntr):
+		res = QueryBox()
+		res.reset()
+		for i in self.box:
+			if i.likes == cntr:
+				res.append(i)
+		return res
+
 	def __getitem__(self, index):
 		return self.box[index]
 
