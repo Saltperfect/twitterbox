@@ -14,7 +14,6 @@ The basic funtionalities implemented are
 8. save results to csv
 9. search by date
 
-other not important add ons added later were
 - added retweet, like counts
 - added filters of retweet and like count(=,>,<=) and also for date range and user name
 - added functions to configure and (re)initialise database (config.ini file)
